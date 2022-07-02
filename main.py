@@ -114,6 +114,7 @@ def calc(str):
 inet1 = 'найди в интернете'
 inet2 = 'поиск в интернете'
 inet3 = 'ищи'
+
 for text in listen():
     print(text)
     if ("открой" in text) and ("диспетчер" in text) and ("задач" in text):
@@ -127,13 +128,13 @@ for text in listen():
     elif ((inet1 in text)  # поиск в интернете
           or (inet2 in text)
           or (inet3 in text)):
-        if inet1 in text:
+        if inet1 in text:               #inet1 = 'найди в интернете'
             text = text.replace(inet1, '')
 
-        elif inet2 in text:
+        elif inet2 in text:             #inet2 = 'поиск в интернете'
             text = text.replace(inet2, '')
 
-        elif inet3 in text:
+        elif inet3 in text:             #inet3 = 'ищи'
             text = text.replace(inet3, '')
         webbrowser.open_new_tab('https://www.google.com/search?q={}'.format(text))
         print('поисковой запрос на тему "{}" задан'.format(text))
@@ -152,3 +153,6 @@ for text in listen():
 
     elif "минус" in text:
         print(calc(text))
+
+    elif ("выключи" in text) and ("программу" in text):
+        exit()
