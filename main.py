@@ -96,7 +96,7 @@ def calc(str):
     x2 = ''
     flag = 0
     for i in range(len(words)):
-        if words[i] == 'минут':
+        if words[i] == 'минус':
             flag = 1
         elif flag != 1:
             if x1 == '':
